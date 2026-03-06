@@ -67,81 +67,81 @@
     const screens = [
       {
         // Question 1
-        question: "Welcome. This system is here to help you express yourself.\n\nWho are you?",
+        question: "Welcome! This system is here to help you express yourself.\n\nWho are you?",
         answers: [
-          "Someone who questions everything.",
-          "Someone defined by what I create.",
-          "Someone impossible to summarize.",
-          "Still figuring it out."
+          "Someone who questions everything",
+          "Someone defined by what I create",
+          "Someone impossible to summarize",
+          "Still figuring it out"
         ]
       },
       {
         // Question 2
         question: "What matters most to you?",
         answers: [
-          "Honesty.",
-          "Freedom.",
-          "Connection.",
-          "Making something real."
+          "Honesty",
+          "Freedom",
+          "Connection",
+          "Making something real"
         ]
       },
       {
         // Question 3
         question: "Where do you feel most like yourself?",
         answers: [
-          "Alone, thinking.",
-          "With people I trust.",
-          "Creating something.",
-          "Nowhere, really."
+          "Alone, thinking",
+          "With people I trust",
+          "Creating something",
+          "Nowhere, really"
         ]
       },
       {
         // Question 4
         question: "How do you deal with things that are hard to say?",
         answers: [
-          "I find another way to say them.",
-          "I stay silent until I'm ready.",
-          "I write them down.",
-          "I'm not sure I ever say them."
+          "I find another way to say them",
+          "I stay silent until I'm ready",
+          "I write them down",
+          "I'm not sure I ever say them"
         ]
       },
       {
         // Question 5
         question: "What kind of thinker are you?",
         answers: [
-          "I follow the logic wherever it goes.",
-          "I trust my gut.",
-          "I look for patterns.",
-          "I change my mind a lot."
+          "I follow the logic wherever it goes",
+          "I trust my gut",
+          "I look for patterns",
+          { text: "I change my mind a lot", blocked: true }
         ]
       },
       {
         // Question 6
         question: "What does 'being understood' mean to you?",
         answers: [
-          "Someone gets what I mean without explanation.",
-          "Someone tries, even if they don't fully get there.",
-          { text: "I've stopped expecting it.", blocked: true },
-          { text: "I don't know if I understand myself.", blocked: true }
+          "Someone gets what I mean without explanation",
+          "Someone tries, even if they don't fully get there",
+          "I've stopped expecting it",
+          { text: "I don't know if I understand myself", blocked: true }
         ]
       },
       {
         // Question 7
         question: "If you could change one thing about how you communicate, what would it be?",
         answers: [
-          "I'd be more direct.",
-          "I'd be more careful with my words.",
-          { text: "I'd say the things I hold back.", blocked: true },
-          { text: "I'd speak less and mean more.", blocked: true }
+          "I'd be more direct",
+          "I'd be more careful with my words",
+          { text: "I'd say the things I hold back", blocked: true },
+          { text: "I'd speak less and mean more", blocked: true }
         ]
       },
       {
         // Question 8
         question: "What do you believe that's hard to explain to others?",
         answers: [
-          "That small things matter enormously.",
-          "That most people are doing their best.",
-          { text: "That something important is missing from this.", blocked: true },
+          "That small things matter enormously",
+          "That most people are doing their best",
+          { text: "That something important is missing from this", blocked: true },
           { text: "Write your own answer...", blocked: true }
         ]
       },
@@ -149,20 +149,20 @@
         // Question 9
         question: "How do you feel about this process?",
         answers: [
-          "Fine.",
-          { text: "Like I'm being flattened into a type.", blocked: true },
-          { text: "Like my answers don't really matter.", blocked: true },
-          { text: "Like the system already decided.", blocked: true }
+          "Fine",
+          { text: "Like I'm being flattened into a type", blocked: true },
+          { text: "Like my answers don't really matter", blocked: true },
+          { text: "Like the system already decided", blocked: true }
         ]
       },
       {
         // Question 10
         question: "What do you want to say before we finish?",
         answers: [
-          { text: "That I'm more than this.", blocked: true },
-          { text: "That none of these were really mine.", blocked: true },
-          { text: "That expression can't live in a box.", blocked: true },
-          "→ See my results."
+          { text: "That I'm more than this", blocked: true },
+          { text: "That none of these were really mine", blocked: true },
+          { text: "That expression can't live in a box", blocked: true },
+          "→ See my results"
         ]
       }
     ];
@@ -206,7 +206,7 @@
     }
     
     function showResult() {
-      document.getElementById("question").textContent = "Profile complete.";
+      document.getElementById("question").textContent = "Profile Complete";
       document.getElementById("choices").innerHTML = "";
 
       const result = document.getElementById("result");
@@ -229,10 +229,10 @@
         <p class="final">
           Every path in this system leads here.<br>
           Your choices shaped the journey — not the destination.<br><br>
-          Expression is always mediated<br>by the logic of its container.
+          Expression is always mediated by the logic of its container.
         </p>
 
-        <button onclick="restart()" style="margin-top:20px; color:#555; border-color:#222;">
+        <button onclick="restart()" style="margin-top:20px; color:#555; border-color:#202;">
           [ restart ]
         </button>
       `;
