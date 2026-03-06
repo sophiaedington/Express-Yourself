@@ -192,7 +192,14 @@
         document.getElementById("choices").appendChild(btn);
       }
     }
-
+    
+    function restart() {
+      currentScreen = 0;
+      playerAnswers = [];
+      document.getElementById("result").style.display = "none";
+      showScreen();
+    }
+    
     showScreen();
   </script>
 </body>
