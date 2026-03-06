@@ -43,6 +43,18 @@
       cursor: not-allowed;
       text-decoration: line-through;
     }
+    
+    #result {
+      display: none;
+      margin-top: 30px;
+      border-top: 1px solid #333;
+      padding-top: 24px;
+      line-height: 2;
+    }
+
+    .label { color: #555; }
+    .value { color: #aaa; }
+    .final { color: #fff; margin-top: 20px; line-height: 1.9; }
   </style>
 </head>
   
@@ -193,6 +205,19 @@
       }
     }
     
+    function showResult() {
+      document.getElementById("question").textContent = "Profile complete.";
+      document.getElementById("choices").innerHTML = "";
+
+      const result = document.getElementById("result");
+      result.style.display = "block";
+
+      // What the player said
+      let playerList = "";
+      for (let i = 0; i < playerAnswers.length; i++) {
+        playerList += "<span class='value'>— " + playerAnswers[i] + "</span><br>";
+      }
+
     function restart() {
       currentScreen = 0;
       playerAnswers = [];
