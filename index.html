@@ -212,11 +212,31 @@
       const result = document.getElementById("result");
       result.style.display = "block";
 
-      // What the player said
       let playerList = "";
       for (let i = 0; i < playerAnswers.length; i++) {
         playerList += "<span class='value'>— " + playerAnswers[i] + "</span><br>";
       }
+      
+      result.innerHTML = `
+        <span class="label">You said:</span><br>
+        ${playerList}
+        <br>
+        <span class="label">The system heard:</span><br>
+        <span class="value">— USER_TYPE: STANDARD</span><br>
+        <span class="value">— SCORE: 74 / 100</span><br>
+        <span class="value">— PROFILE: COMPLIANT_CREATIVE</span><br>
+
+        <p class="final">
+          Every path in this system leads here.<br>
+          Your choices shaped the journey — not the destination.<br><br>
+          Expression is always mediated<br>by the logic of its container.
+        </p>
+
+        <button onclick="restart()" style="margin-top:20px; color:#555; border-color:#222;">
+          [ restart ]
+        </button>
+      `;
+    }
 
     function restart() {
       currentScreen = 0;
