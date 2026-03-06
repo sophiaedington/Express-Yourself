@@ -64,6 +64,8 @@
   <div id="result"></div>
 
   <script>
+
+    // Questions
     const screens = [
       {
         // Question 1
@@ -166,23 +168,21 @@
         ]
       }
     ];
-    
+
+    // Tracks what screen the user is on and what the user answers
     let currentScreen = 0;
     let playerAnswers = [];
-    
+
+    // Shows the current screen
     function showScreen() {
       const screen = screens[currentScreen];
-      
       document.getElementById("question").textContent = screen.question;
-      
       document.getElementById("choices").innerHTML = "";
       
       for (let i = 0; i < screen.answers.length; i++) {
         const answer = screen.answers[i];
-        
         const text    = (typeof answer === "string") ? answer : answer.text;
         const blocked = (typeof answer === "string") ? false  : answer.blocked;
-        
         const btn = document.createElement("button");
         btn.textContent = text;
         
@@ -204,7 +204,8 @@
         document.getElementById("choices").appendChild(btn);
       }
     }
-    
+
+    // Shows results screen
     function showResult() {
       document.getElementById("question").textContent = "Profile Complete";
       document.getElementById("choices").innerHTML = "";
@@ -216,7 +217,8 @@
       for (let i = 0; i < playerAnswers.length; i++) {
         playerList += "<span class='value'>— " + playerAnswers[i] + "</span><br>";
       }
-      
+
+      // Results screen text
       result.innerHTML = `
         <span class="label">You said:</span><br>
         ${playerList}
@@ -238,13 +240,15 @@
       `;
     }
 
+    // Restarts the game
     function restart() {
       currentScreen = 0;
       playerAnswers = [];
       document.getElementById("result").style.display = "none";
       showScreen();
     }
-    
+
+    // Starts the game
     showScreen();
   </script>
 </body>
