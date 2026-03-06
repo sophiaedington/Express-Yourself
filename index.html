@@ -32,6 +32,17 @@
       cursor: pointer;
       text-align: left;
     }
+    button:hover {
+      border-color: #aaa;
+      color: #fff;
+    }
+
+    .blocked {
+      color: #500;
+      border-color: #300;
+      cursor: not-allowed;
+      text-decoration: line-through;
+    }
   </style>
 </head>
   
@@ -143,6 +154,43 @@
         ]
       }
     ];
+    
+    function showScreen() {
+      const screen = screens[currentScreen];
+      
+      document.getElementById("question").textContent = screen.question;
+      
+      document.getElementById("choices").innerHTML = "";
+      
+      for (let i = 0; i < screen.answers.length; i++) {
+        const answer = screen.answers[i];
+        
+        const text    = (typeof answer === "string") ? answer : answer.text;
+        const blocked = (typeof answer === "string") ? false  : answer.blocked;
+        
+        const btn = document.createElement("button");
+        btn.textContent = text;
+        
+        if (blocked) {
+          btn.className = "blocked";
+          btn.disabled  = true;
+        } else {
+          btn.onclick = function() {
+            playerAnswers.push(text);
+            currentScreen++;
+            
+            if (currentScreen < screens.length) {
+              showScreen();
+            } else {
+              showResult();
+            }
+          };
+        }
+        document.getElementById("choices").appendChild(btn);
+      }
+    }
+
+    showScreen();
   </script>
 </body>
 </html>
